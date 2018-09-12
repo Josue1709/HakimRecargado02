@@ -1,1 +1,53 @@
-https://repl.it/@Josue1709/HakimRecargado02
+import java.util.Scanner;
+import java.util.Random;
+
+class Main {
+  public static void main(String[] args) {
+    String mensaje;
+    String user;
+
+    user="Josue";
+    Scanner teclado=new Scanner(System.in);//orden de Scanner
+    int num;
+
+    mensaje="Hakim>>\n\tAhora, jugaremos a la moneda\n";//mensaje a imprimir
+    mensaje=mensaje+"\tDare un numero aleatorio\n";
+    mensaje=mensaje+ "\tSi el número es >0.500 será cruz\n";
+    mensaje=mensaje+"\tSi el numero es =.500 sera que cayo de canto\n";
+    mensaje=mensaje+ "\tSi el numero es <500 sera cara\n";
+    mensaje=mensaje+ "\tPresiona 1 para apostar por cara, 2 porque caiga de canto y 3 por cruz .\n";
+    mensaje=mensaje+"\tQué elijes?\n" +user+ ">>\n\t";
+    System.out.println(mensaje);//Imprimir mensaje
+    num=teclado.nextInt();
+
+    Random Ale=new Random();//Generar un numero aleatorio
+    double numAle;
+    numAle=Ale.nextDouble();
+    System.out.printf("Hakim>>\n\tEl número aleatorio es: %4.3f",numAle);
+
+    if (numAle<0.500){//Condicion If por si el numero es menor
+      System.out.println("\n\tO sea cara!");
+      if(num==1){
+        System.out.println("\n\tTu ganas!");
+      }
+      else{
+        System.out.println("\n\tYo gané!");
+      }
+    }
+    else if(num==0.500){//condicion else por el si el numero es mayor
+      System.out.println("\n\tO sea de canto!");
+      if (num==2){
+        System.out.println("\n\tTu ganas!");
+      }
+      else{
+        System.out.println("\n\tYo gano!");
+      }
+    }
+    else if (num==3){
+        System.out.println("\n\tTu ganas!");
+      }
+      else{
+        System.out.println("\n\tYo gané!");
+    }
+  }
+}
